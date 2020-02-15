@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import Button from '../components/Button';
+import MoneyLabel from '../components/MoneyLabel';
 
 const GameContainer = () => {
 
@@ -13,8 +15,24 @@ const GameContainer = () => {
   const [controlsLayerH, setControlsLayerH] = useState(64*1.5);
   const [costPlowing, setCostPlowing] = useState(5);
 
+  const [money, setMoney] = useState(300);
+  const [currentCrop, setCurrentCrop] = useState(0);
+
+  const [shopMarginX, setShopMarginX] = useState(50);
+  const [shopMarginY, setShopMarginY] = useState(50);
+
   return (
-    <></>
+    <>
+      <div className="row-container">
+        <Button
+         className="shop-button"
+         title="Shop"
+        />
+        <MoneyLabel
+          money={money}
+        />
+      </div>
+    </>
   );
 };
 
